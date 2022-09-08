@@ -13,7 +13,7 @@ COPY composer.json composer.json
 RUN composer install --prefer-dist --no-scripts --no-dev --no-autoloader && rm -rf /home/app/.composer
 
 #Copy codebase
-COPY --chown=app:root . ./
+COPY --chown=app:root ../
 
 #run composer dump-autoload
 RUN composer dump-autoload --no-scripts --no-dev --optimize
